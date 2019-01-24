@@ -15,6 +15,8 @@ public class Client {
 
     private String phoneNumber;
 
+    private String password;
+
     private long rating;
 
     @ManyToMany
@@ -23,9 +25,10 @@ public class Client {
     public Client() {
     }
 
-    public Client(String name, String phoneNumber, long rating, List<Product> favouriteProduct) {
+    public Client(String name, String phoneNumber, String password, long rating, List<Product> favouriteProduct) {
         this.name = name;
         this.phoneNumber = phoneNumber;
+        this.password = password;
         this.rating = rating;
         this.favouriteProduct = favouriteProduct;
     }
@@ -52,6 +55,14 @@ public class Client {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public long getRating() {
