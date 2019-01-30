@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавление товара</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="https://vk.com/js/api/share.js?95" charset="windows-1251"></script>
+    <link rel="stylesheet" href="lobibox-master/dist/css/lobibox.min.css"/>
+    <script type="text/javascript" src="https://vk.com/js/api/openapi.js?160"></script>
+</head>
+<body>
+<script src="lobibox-master/lib/jquery.1.11.min.js"></script>
+<script src="lobibox-master/dist/js/lobibox.min.js"></script>
+<div id="includedContent"></div>
+
+<form id="product" method="POST" enctype="multipart/form-data" action="/addProduct">
+    <div class="form-group" hidden>
+        <input type="text" class="form-control" id="id" placeholder="Название" name="id">
+    </div>
+    <div class="form-group">
+        <label for="name">Название</label>
+        <input type="text" class="form-control" id="name" placeholder="Название" name="name">
+    </div>
+    <div class="form-group">
+        <label for="description">Описание</label>
+        <input type="text" class="form-control" id="description" placeholder="Описание" name="description">
+    </div>
+    <div class="form-group">
+        <label for="price">Цена</label>
+        <input type="text" class="form-control" id="price" placeholder="Цена" name="price">
+    </div>
+    <div class="form-group">
+        <label for="photo">Выберите фото</label>
+        <input type="file" class="form-control" id="photo" name="photo">
+    </div>
+    <button type="submit" class="btn btn-primary" id="post">Добавить</button>
+</form>
+
+<script>
+    $(document).ready(function () {
+        document.getElementById('id').value = localStorage.getItem('user')
+    });
+</script>
+
+<script>
+    $("#includedContent").load("navBar.html");
+</script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+</html>

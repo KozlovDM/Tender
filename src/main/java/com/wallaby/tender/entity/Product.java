@@ -1,6 +1,7 @@
 package com.wallaby.tender.entity;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -12,23 +13,28 @@ public class Product {
 
     private String name;
 
-    private double price;
+    private Double price;
 
     private String location;
 
     private String description;
 
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
+    private List<Photo> photos;
+
     @ManyToOne
+    @JoinColumn(name = "client_id")
     private Client client;
 
     public Product() {
     }
 
-    public Product(String name, double price, String location, String description, Client client) {
+    public Product(String name, Double price, String location, String description, List<Photo> photos, Client client) {
         this.name = name;
         this.price = price;
         this.location = location;
         this.description = description;
+        this.photos = photos;
         this.client = client;
     }
 
@@ -48,11 +54,11 @@ public class Product {
         this.name = name;
     }
 
-    public double getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
@@ -78,6 +84,14 @@ public class Product {
 
     public void setClient(Client client) {
         this.client = client;
+    }
+
+    public List<Photo> getPhotos() {
+        return photos;
+    }
+
+    public void setPhotos(List<Photo> photos) {
+        this.photos = photos;
     }
 
     @Override

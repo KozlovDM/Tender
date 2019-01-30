@@ -19,17 +19,21 @@ public class Client {
 
     private long rating;
 
+    @OneToMany(mappedBy = "client", cascade = CascadeType.ALL)
+    private List<Product> products;
+
     @ManyToMany
     private List<Product> favouriteProduct;
 
     public Client() {
     }
 
-    public Client(String name, String phoneNumber, String password, long rating, List<Product> favouriteProduct) {
+    public Client(String name, String phoneNumber, String password, long rating, List<Product> products, List<Product> favouriteProduct) {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.password = password;
         this.rating = rating;
+        this.products = products;
         this.favouriteProduct = favouriteProduct;
     }
 
@@ -71,6 +75,14 @@ public class Client {
 
     public void setRating(long rating) {
         this.rating = rating;
+    }
+
+    public List<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(List<Product> products) {
+        this.products = products;
     }
 
     public List<Product> getFavouriteProduct() {

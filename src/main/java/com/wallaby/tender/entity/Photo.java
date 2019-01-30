@@ -12,7 +12,8 @@ public class Photo {
 
     private String photo;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne
+    @JoinColumn(name = "product_id")
     private Product product;
 
     public Photo() {
@@ -65,7 +66,6 @@ public class Photo {
     public String toString() {
         return "Photo{" +
                 "id=" + id +
-                ", photo='" + photo + '\'' +
                 '}';
     }
 }
