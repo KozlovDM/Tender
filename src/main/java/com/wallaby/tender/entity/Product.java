@@ -19,7 +19,7 @@ public class Product {
 
     private String description;
 
-    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
+    @OneToMany
     private List<Photo> photos;
 
     @ManyToOne

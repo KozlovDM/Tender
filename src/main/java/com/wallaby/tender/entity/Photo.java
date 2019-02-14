@@ -12,16 +12,12 @@ public class Photo {
 
     private String photo;
 
-    @ManyToOne
-    @JoinColumn(name = "product_id")
-    private Product product;
 
     public Photo() {
     }
 
-    public Photo(String photo, Product product) {
+    public Photo(String photo) {
         this.photo = photo;
-        this.product = product;
     }
 
     public long getId() {
@@ -38,14 +34,6 @@ public class Photo {
 
     public void setPhoto(String photo) {
         this.photo = photo;
-    }
-
-    public Product getProduct() {
-        return product;
-    }
-
-    public void setProduct(Product product) {
-        this.product = product;
     }
 
     @Override

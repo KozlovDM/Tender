@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tender</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="style.css" rel='stylesheet' type='text/css'/>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+</head>
+<body>
+<div id="includedContent">
+</div>
+
+<div class="details-page">
+    <div class="content details-page">
+        <div class="product-details">
+            <div class="container">
+                <div class="details-left" id="etalage">
+
+                </div>
+
+                <div class="details-left-info">
+                    <div class="details-right-head" id="in">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var getUrlParameter = function getUrlParameter(sParam) {
+        var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+            sURLVariables = sPageURL.split('&'),
+            sParameterName,
+            i;
+        for (i = 0; i < sURLVariables.length; i++) {
+            sParameterName = sURLVariables[i].split('=');
+            if (sParameterName[0] === sParam) {
+                return sParameterName[1] === undefined ? true : sParameterName[1];
+            }
+        }
+    };
+
+    $(document).ready(function () {
+        var id = getUrlParameter('id');
+        $.ajax({
+            type: 'GET',
+            url: '/product/' + id,
+            success: function (res) {
+                $('#in').append('<h1 style="margin: 0px">' + res.name + '</h1>' +
+                    '<p class="product-detail-info" style="margin: 0px">' + res.description + '</p>' +
+                    '<div class="product-more-details">' +
+                    '<label>' + res.price + '</label><br>' +
+                    '<label> Продавец: ' + res.client.name + '</label><label style="margin-left: 40px"> Рейтинг: ' + res.client.rating + '</label><br>' +
+                    '<label>Телефон: ' + res.client.phoneNumber + '</label><br>' +
+                    '<input type="button" value="В избранное"></div>');
+                $('#etalage').append(
+                    '<img class="etalage_thumb_image" src="' + res.photos[0].photo + '" style="display: inline; width: 300px; height: 400px; opacity: 1;">');
+            },
+            error: function (err) {
+                console.log(err);
+            }
+        });
+    });
+</script>
+
+<script>
+    $("#includedContent").load("navBar.html");
+</script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,257 @@
+/*-----start-details-page----*/
+.product-details{
+	min-height: 800px;
+}
+.details-page{
+	padding:0;
+}
+.product-details  h1{
+	color: #4f4844;
+	font-weight: 700;
+	font-size: 1.2em;
+	padding: 0.2em 0;
+	text-transform: uppercase;
+	margin: 0;
+}
+.product-head{
+	padding: 0.5em 0;
+	margin-bottom: 1em;
+}
+.product-head li{
+	display:inline-block;
+}
+.product-head li a{
+	color: #4f4844;
+	font-weight: 700;
+	font-size: 1.2em;
+	padding: 0.8em 0;
+	display: inline-block;
+	text-transform: uppercase;
+	text-decoration:none;
+}
+.product-head li.active-page a{
+	color:#7e4622;
+}
+#carousel-wrapper {
+	position: relative;
+}
+#carousel, #thumbs {
+	overflow: hidden;
+}
+#carousel span, #carousel img,
+#thumbs a, #thumbs img  {
+	display: block;
+	float: left;
+}
+#carousel span, #carousel a,
+#thumbs span, #thumbs a {
+	position: relative;
+}
+#carousel img,
+#thumbs img {
+	border: none;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#carousel img.glare,
+#thumbs img.glare {
+	width: 102%;
+	height: auto;
+}
+ 
+#carousel span {
+	width: 554px;
+	height: 313px;
+}
+ 
+#thumbs-wrapper {
+	padding: 20px 40px;
+	position: relative;
+}
+#thumbs a {
+	width: 150px;
+	height: 100px;
+	margin: 0 10px;
+	overflow: hidden;
+}
+#thumbs a:hover, #thumbs a.selected {
+	border-color: #566;
+}
+#wrapper img#shadow {
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+}
+
+#prev {
+	background-position: 0 0;
+	left: 10px;
+}
+#next {
+	background-position: -19px 0;
+	right: 10px;
+}			
+#prev:hover { 
+	background-position: 0 -20px;				
+}
+#next:hover {
+	background-position: -19px -20px;				
+}
+#prev.disabled, #next.disabled {
+	display: none !important;
+}
+.details-left-slider{
+	float:left;
+	width: 38%;
+}
+.details-left-info{
+	float: left;
+	width: 58%;
+}
+.pro-rate li{
+	display:inline-block;
+}
+.pro-rate li a{
+	color: #adadad;
+	padding: 0.8em 0 0 0;
+	display: block;
+	font-size: 0.8em;
+}
+.pro-rate li a:hover{
+	color:#7e4622;
+}
+.product-detail-info{
+	color: #adadad;
+	display: block;
+	font-size: 1em;
+	padding: 1em 0;
+	line-height: 1.5em;
+	font-family: 'Lora', serif;
+}
+.price{
+	float:left;
+}
+.price span{
+	display: block;
+	text-decoration: line-through;
+	color: red;
+	font-size: 1.2em;
+	padding: 0.5em 0;
+}
+.price label{
+	display: block;
+	color: green;
+	font-size: 1.2em;
+	padding: 0 0 0.5em 0;
+}
+.stock{
+	float:right;
+}
+.stock i{
+	color: green;
+	margin-top: 2em;
+	display: block;
+	font-style: normal;
+}
+.product-colors li a span{
+	width:32px;
+	height:32px;
+	display:inline-block;
+}
+.product-colors h3,.prosuct-qty span{
+	color: #adadad;
+	font-weight: 700;
+	font-size: 0.875em;
+	padding-bottom: 0.5em;
+	display: block;
+	text-transform: uppercase;
+}
+.product-colors li{
+	display:inline-block;
+}
+.prosuct-qty select{
+	font-family: 'Open Sans', sans-serif;
+	border: 1px solid #eee;
+	padding: 0.5em;
+	font-size: 1em;
+	outline:none;
+}
+.prosuct-qty option{
+	border:1px solid #EEE;
+	font-family: 'Open Sans', sans-serif;
+}
+.prosuct-qty{
+	margin-bottom:1.5em;
+}
+.product-colors{
+	padding:0.5em 0;
+}
+.product-more-details input[type="button"]{
+	background: #4f4844;
+	padding: 0.5em 1em;
+	display: inline-block;
+	color: #FFF;
+	text-decoration: none;
+	margin-top: 1em;
+	border:none;
+	font-size:0.875em;
+	text-transform:uppercase;
+}
+.product-more-details input[type="button"]:hover{
+	background: #8b4613;
+}
+.product-share li{
+	display:inline-block;
+}
+.product-share li a span{
+	width:27px;
+	height:27px;
+	display:inline-block;
+}
+.product-share{
+	margin:1em 0;
+}
+.product-share h3{
+	color: #adadad;
+	font-weight: 700;
+	font-size: 0.875em;
+	padding-bottom: 0.5em;
+	display: block;
+	text-transform: uppercase;
+}
+.product-share li a:hover {
+	zoom: 1;
+	filter: alpha(opacity=50);
+	opacity: 0.7;
+	-webkit-transition: opacity .15s ease-in-out;
+	-moz-transition: opacity .15s ease-in-out;
+	-ms-transition: opacity .15s ease-in-out;
+	-o-transition: opacity .15s ease-in-out;
+	transition: opacity .15s ease-in-out;
+}
+.details-left{
+	float:left;
+	width:80%;
+}
+
+.details-page ul{
+	margin:0;
+	padding:0;
+}
+.details-page ul li{
+	list-style:none;
+}
+a.learn-more{
+	text-decoration:none;
+}
+a.learn-more h3{
+	font-size:0.875em;
+	margin:0;
+	padding:0;
+}
+ul.prosuct-qty{
+	margin:1em 0;
+}
